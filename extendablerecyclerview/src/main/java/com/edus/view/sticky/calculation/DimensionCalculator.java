@@ -1,4 +1,4 @@
-package com.dewmobile.kuaiya.view.recyclerview.sticky.calculation;
+package com.edus.view.sticky.calculation;
 
 import android.graphics.Rect;
 import android.view.View;

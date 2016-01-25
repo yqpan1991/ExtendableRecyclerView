@@ -1,4 +1,4 @@
-package com.dewmobile.kuaiya.view.recyclerview;
+package com.edus.view;
 
 import android.content.Context;
 import android.graphics.Canvas;

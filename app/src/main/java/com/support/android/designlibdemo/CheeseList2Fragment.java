@@ -12,9 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.dewmobile.kuaiya.view.recyclerview.DmRecyclerViewWrapper;
+import com.edus.view.DmRecyclerViewWrapper;
 import com.support.android.designlibdemo.adapter.TestAdapter;
-import com.dewmobile.kuaiya.view.recyclerview.decoration.DividerItemDecoration;
+import com.edus.view.decoration.DividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;

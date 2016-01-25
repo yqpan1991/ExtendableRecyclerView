@@ -1,4 +1,4 @@
-package com.dewmobile.kuaiya.view.recyclerview;
+package com.edus.view;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

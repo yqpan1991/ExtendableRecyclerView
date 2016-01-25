@@ -1,13 +1,13 @@
-package com.dewmobile.kuaiya.view.recyclerview.sticky;
+package com.edus.view.sticky;
 
 import android.graphics.Rect;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.dewmobile.kuaiya.view.recyclerview.sticky.caching.HeaderProvider;
-import com.dewmobile.kuaiya.view.recyclerview.sticky.calculation.DimensionCalculator;
-import com.dewmobile.kuaiya.view.recyclerview.sticky.util.OrientationProvider;
+import com.edus.view.sticky.caching.HeaderProvider;
+import com.edus.view.sticky.calculation.DimensionCalculator;
+import com.edus.view.sticky.util.OrientationProvider;
 
 
 /**

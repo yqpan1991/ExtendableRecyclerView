@@ -1,4 +1,4 @@
-package com.dewmobile.kuaiya.view.recyclerview.sticky.caching;
+package com.edus.view.sticky.caching;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

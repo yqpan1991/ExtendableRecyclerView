@@ -1,4 +1,4 @@
-package com.dewmobile.kuaiya.view.recyclerview.sticky.caching;
+package com.edus.view.sticky.caching;
 
 import android.support.v4.util.LongSparseArray;
 import android.support.v7.widget.LinearLayoutManager;
@@ -6,8 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.dewmobile.kuaiya.view.recyclerview.sticky.StickyRecyclerHeadersAdapter;
-import com.dewmobile.kuaiya.view.recyclerview.sticky.util.OrientationProvider;
+import com.edus.view.sticky.util.OrientationProvider;
+import com.edus.view.sticky.StickyRecyclerHeadersAdapter;
 
 /**
  * An implementation of {@link com.marshalchen.ultimaterecyclerview.stickyheadersrecyclerview.caching.HeaderProvider} that creates and caches header views

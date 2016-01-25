@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <com.dewmobile.kuaiya.view.recyclerview.DmRecyclerViewWrapper
+    <com.edus.view.DmRecyclerViewWrapper
         android:id="@+id/rv_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

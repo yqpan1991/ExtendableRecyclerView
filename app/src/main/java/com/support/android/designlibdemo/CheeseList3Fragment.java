@@ -14,13 +14,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.dewmobile.kuaiya.view.recyclerview.DmBaseAdapter;
-import com.dewmobile.kuaiya.view.recyclerview.DmBaseViewHolder;
-import com.dewmobile.kuaiya.view.recyclerview.DmRecyclerViewWrapper;
-import com.dewmobile.kuaiya.view.recyclerview.decoration.DividerItemDecoration;
-import com.dewmobile.kuaiya.view.recyclerview.sticky.StickyRecyclerHeadersAdapter;
-import com.dewmobile.kuaiya.view.recyclerview.sticky.StickyRecyclerHeadersDecoration;
-import com.support.android.designlibdemo.adapter.TestAdapter;
+import com.edus.view.DmBaseAdapter;
+import com.edus.view.DmBaseViewHolder;
+import com.edus.view.DmRecyclerViewWrapper;
+import com.edus.view.decoration.DividerItemDecoration;
+import com.edus.view.sticky.StickyRecyclerHeadersAdapter;
+import com.edus.view.sticky.StickyRecyclerHeadersDecoration;
 
 import java.util.ArrayList;
 import java.util.List;

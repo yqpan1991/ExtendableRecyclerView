@@ -1,4 +1,4 @@
-package com.dewmobile.kuaiya.view.recyclerview.sticky;
+package com.edus.view.sticky;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;
@@ -7,12 +7,12 @@ import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
 
-import com.dewmobile.kuaiya.view.recyclerview.sticky.caching.HeaderProvider;
-import com.dewmobile.kuaiya.view.recyclerview.sticky.caching.HeaderViewCache;
-import com.dewmobile.kuaiya.view.recyclerview.sticky.calculation.DimensionCalculator;
-import com.dewmobile.kuaiya.view.recyclerview.sticky.rendering.HeaderRenderer;
-import com.dewmobile.kuaiya.view.recyclerview.sticky.util.LinearLayoutOrientationProvider;
-import com.dewmobile.kuaiya.view.recyclerview.sticky.util.OrientationProvider;
+import com.edus.view.sticky.util.LinearLayoutOrientationProvider;
+import com.edus.view.sticky.util.OrientationProvider;
+import com.edus.view.sticky.caching.HeaderProvider;
+import com.edus.view.sticky.caching.HeaderViewCache;
+import com.edus.view.sticky.calculation.DimensionCalculator;
+import com.edus.view.sticky.rendering.HeaderRenderer;
 
 public class StickyRecyclerHeadersDecoration extends RecyclerView.ItemDecoration {
 

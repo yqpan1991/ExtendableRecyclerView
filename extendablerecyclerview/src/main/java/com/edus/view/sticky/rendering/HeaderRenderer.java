@@ -1,4 +1,4 @@
-package com.dewmobile.kuaiya.view.recyclerview.sticky.rendering;
+package com.edus.view.sticky.rendering;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;
@@ -6,8 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.dewmobile.kuaiya.view.recyclerview.sticky.calculation.DimensionCalculator;
-import com.dewmobile.kuaiya.view.recyclerview.sticky.util.OrientationProvider;
+import com.edus.view.sticky.util.OrientationProvider;
+import com.edus.view.sticky.calculation.DimensionCalculator;
 
 /**
  * Responsible for drawing headers to the canvas provided by the item decoration

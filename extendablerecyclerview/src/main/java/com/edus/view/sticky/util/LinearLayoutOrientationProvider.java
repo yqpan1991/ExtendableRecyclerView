@@ -1,4 +1,4 @@
-package com.dewmobile.kuaiya.view.recyclerview.sticky.util;
+package com.edus.view.sticky.util;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;

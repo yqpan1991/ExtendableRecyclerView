@@ -5,8 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.dewmobile.kuaiya.view.recyclerview.DmBaseAdapter;
-import com.dewmobile.kuaiya.view.recyclerview.DmBaseViewHolder;
+import com.edus.view.DmBaseAdapter;
+import com.edus.view.DmBaseViewHolder;
 import com.support.android.designlibdemo.R;
 
 /**

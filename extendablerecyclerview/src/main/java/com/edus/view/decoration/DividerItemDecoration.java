@@ -1,4 +1,4 @@
-package com.dewmobile.kuaiya.view.recyclerview.decoration;
+package com.edus.view.decoration;
 
 import android.content.Context;
 import android.content.res.TypedArray;
