@@ -21,7 +21,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.TextViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
@@ -32,6 +31,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.edus.view.decoration.LinearItemDividerDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,6 +59,7 @@ public class CheeseListFragment extends Fragment {
         //5. 如果需要分割线,RecyclerView设置ItemDecoration
         //6. 如果需要动画,设置ItemDecoration
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
+        recyclerView.addItemDecoration(new LinearItemDividerDecoration(this.getActivity(), LinearItemDividerDecoration.VERTICAL_LIST));
         recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
                 getRandomSublist(Cheeses.sCheeseStrings, 30)));
     }

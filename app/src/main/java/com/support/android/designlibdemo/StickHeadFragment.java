@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.edus.view.DmBaseAdapter;
 import com.edus.view.DmBaseViewHolder;
 import com.edus.view.DmRecyclerViewWrapper;
-import com.edus.view.decoration.DividerItemDecoration;
+import com.edus.view.decoration.LinearItemDividerDecoration;
 import com.edus.view.sticky.StickyRecyclerHeadersAdapter;
 import com.edus.view.sticky.StickyRecyclerHeadersDecoration;
 
@@ -56,7 +56,7 @@ public class StickHeadFragment extends Fragment {
         initAdapterData();
         mDrvwContent.setAdapter(mAdapter);
         mDrvwContent.addItemDecoration(new StickyRecyclerHeadersDecoration(mAdapter));
-        mDrvwContent.addItemDecoration(new DividerItemDecoration(this.getActivity(), DividerItemDecoration.VERTICAL_LIST));
+        mDrvwContent.addItemDecoration(new LinearItemDividerDecoration(this.getActivity(), LinearItemDividerDecoration.VERTICAL_LIST));
         mDrvwContent.setLayoutManager(new LinearLayoutManager(this.getActivity(), LinearLayoutManager.VERTICAL, false));
         mDrvwContent.setOnLoadMoreListener(new DmRecyclerViewWrapper.OnLoadMoreListener() {
             @Override

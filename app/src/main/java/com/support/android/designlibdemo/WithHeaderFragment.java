@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.edus.view.DmRecyclerViewWrapper;
-import com.edus.view.decoration.DividerItemDecoration;
+import com.edus.view.decoration.LinearItemDividerDecoration;
 import com.support.android.designlibdemo.adapter.TestAdapter;
 
 import java.util.ArrayList;
@@ -53,7 +53,7 @@ public class WithHeaderFragment extends Fragment {
     private void setupRecyclerView() {
         initAdapterData();
         mDrvwContent.setAdapter(mAdapter);
-        mDrvwContent.addItemDecoration(new DividerItemDecoration(this.getActivity(), DividerItemDecoration.VERTICAL_LIST));
+        mDrvwContent.addItemDecoration(new LinearItemDividerDecoration(this.getActivity(), LinearItemDividerDecoration.VERTICAL_LIST));
         mDrvwContent.setLayoutManager(new LinearLayoutManager(this.getActivity(), LinearLayoutManager.VERTICAL, false));
         mDrvwContent.setOnLoadMoreListener(new DmRecyclerViewWrapper.OnLoadMoreListener() {
             @Override
