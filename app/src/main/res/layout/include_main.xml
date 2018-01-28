@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (C) 2015 The Android Open Source Project
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,24 +12,31 @@
   ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
--->
+  -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/drawer_layout"
-    android:orientation="vertical"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:layout_scrollFlags="scroll|enterAlways|snap" />
+    <Button
+        android:id="@+id/bt_linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Linear" />
 
-    <include layout="@layout/include_main"/>
+    <Button
+        android:id="@+id/bt_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grid" />
+
+
+    <Button
+        android:id="@+id/bt_stagger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="stagger" />
+
 
 </LinearLayout>
