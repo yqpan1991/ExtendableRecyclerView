@@ -37,6 +37,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * RecyclerView的基本用法
+ */
 public class CheeseListFragment extends Fragment {
 
     @Nullable
@@ -49,6 +52,12 @@ public class CheeseListFragment extends Fragment {
     }
 
     private void setupRecyclerView(RecyclerView recyclerView) {
+        //1. RecyclerView设置LayoutManager
+        //2. RecyclerView设置Adapter
+        //3. adapter复写对应的getItemCount, getItemViewType,onCreateViewHolder,onBindViewHolder
+        //4. adapter设置数据
+        //5. 如果需要分割线,RecyclerView设置ItemDecoration
+        //6. 如果需要动画,设置ItemDecoration
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
         recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
                 getRandomSublist(Cheeses.sCheeseStrings, 30)));

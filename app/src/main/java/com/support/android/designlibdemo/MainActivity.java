@@ -33,9 +33,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,10 +99,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
-        adapter.addFragment(new CheeseListFragment(), "recyclerview");
-        adapter.addFragment(new CheeseList3Fragment(), "stickyHead");
-        adapter.addFragment(new CheeseList4Fragment(), "header");
-        adapter.addFragment(new CheeseList2Fragment(), "dmrecyclerview");
+        adapter.addFragment(new CheeseListFragment(), "normal");
+        adapter.addFragment(new StickHeadFragment(), "stickyHead");
+        adapter.addFragment(new WithHeaderFragment(), "header");
+        adapter.addFragment(new CustomizeFragment(), "customize");
         viewPager.setAdapter(adapter);
     }
 

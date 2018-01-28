@@ -20,9 +20,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/1/12.
+ * 定制的RecyclerView,包含HeaderView,FooterView和LoadMore
  */
-public class CheeseList2Fragment extends Fragment {
+public class CustomizeFragment extends Fragment {
 
     private final String TAG = this.getClass().getSimpleName();
 
