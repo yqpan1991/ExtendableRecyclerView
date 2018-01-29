@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(getApplicationContext(), LinearActivity.class));
                 break;
             case R.id.bt_grid:
+                startActivity(new Intent(getApplicationContext(), GridActivity.class));
                 break;
             case R.id.bt_stagger:
                 break;

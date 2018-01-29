@@ -38,6 +38,7 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".LinearActivity"></activity>
+        <activity android:name=".GridActivity"></activity>
 
     </application>
 
