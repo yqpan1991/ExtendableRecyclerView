@@ -1,9 +1,8 @@
 package com.support.android.designlibdemo;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -12,11 +11,15 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RadioGroup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +31,7 @@ import java.util.List;
 public class GridActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
+    private Adapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,14 +73,45 @@ public class GridActivity extends AppCompatActivity {
             case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 return true;
+            case R.id.action_settings:
+                //弹窗修改
+                showAlterDialog();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
+    private void showAlterDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("update recycler config");
+        View inflate = LayoutInflater.from(this).inflate(R.layout.grid_dialog, null);
+        final RadioGroup radioGroup = (RadioGroup) inflate.findViewById(R.id.rg_orientaion);
+        builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                int checkedRadioButtonId = radioGroup.getCheckedRadioButtonId();
+                if(checkedRadioButtonId == R.id.rb_vertical){
+                    mAdapter.setOrientation(LinearLayoutManager.VERTICAL);
+                }else if(checkedRadioButtonId == R.id.rb_horizontal){
+                    mAdapter.setOrientation(LinearLayoutManager.HORIZONTAL);
+                }
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setView(inflate);
+        builder.create().show();
+    }
+
     private void setupViewPager(ViewPager viewPager) {
-        Adapter adapter = new Adapter(getSupportFragmentManager());
-        adapter.addFragment(new CheeseGridFragment(), "normal");
-        viewPager.setAdapter(adapter);
+        mAdapter = new Adapter(getSupportFragmentManager());
+        mAdapter.addFragment(new CheeseGridFragment(), "normal");
+        viewPager.setAdapter(mAdapter);
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
@@ -91,7 +126,7 @@ public class GridActivity extends AppCompatActivity {
                 });
     }
 
-    static class Adapter extends FragmentPagerAdapter {
+    static class Adapter extends FragmentPagerAdapter implements GridOperation{
         private final List<Fragment> mFragments = new ArrayList<>();
         private final List<String> mFragmentTitles = new ArrayList<>();
 
@@ -117,6 +152,28 @@ public class GridActivity extends AppCompatActivity {
         @Override
         public CharSequence getPageTitle(int position) {
             return mFragmentTitles.get(position);
+        }
+
+        @Override
+        public void setOrientation(int orientation) {
+            if(mFragments != null && !mFragments.isEmpty()){
+                for(Fragment fragment : mFragments){
+                    if(fragment instanceof GridOperation){
+                        ((GridOperation)fragment).setOrientation(orientation);
+                    }
+                }
+            }
+        }
+
+        @Override
+        public void setSpanCount(int spanCount) {
+            if(mFragments != null && !mFragments.isEmpty()){
+                for(Fragment fragment : mFragments){
+                    if(fragment instanceof GridOperation){
+                        ((GridOperation)fragment).setSpanCount(spanCount);
+                    }
+                }
+            }
         }
     }
 }

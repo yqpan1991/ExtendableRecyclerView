@@ -28,6 +28,7 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -43,7 +44,11 @@ import java.util.Random;
 /**
  * RecyclerView的基本用法
  */
-public class CheeseGridFragment extends Fragment {
+public class CheeseGridFragment extends Fragment implements GridOperation{
+
+    private int mOrientation = LinearLayoutManager.VERTICAL;
+    private int mSpanCount = 2;
+    private GridLayoutManager mGridLayoutManager;
 
     @Nullable
     @Override
@@ -61,7 +66,8 @@ public class CheeseGridFragment extends Fragment {
         //4. adapter设置数据
         //5. 如果需要分割线,RecyclerView设置ItemDecoration
         //6. 如果需要动画,设置ItemDecoration
-        recyclerView.setLayoutManager(new GridLayoutManager(recyclerView.getContext(), 2, LinearLayoutManager.VERTICAL, false));
+        mGridLayoutManager = new GridLayoutManager(recyclerView.getContext(), mSpanCount, mOrientation, false);
+        recyclerView.setLayoutManager(mGridLayoutManager);
         recyclerView.addItemDecoration(new DividerGridItemDecoration(this.getActivity()));
         recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(getActivity(),
                 getRandomSublist(Cheeses.sCheeseStrings, 30)));
@@ -74,6 +80,25 @@ public class CheeseGridFragment extends Fragment {
             list.add(array[random.nextInt(array.length)]);
         }
         return list;
+    }
+
+    @Override
+    public void setOrientation(int orientation) {
+        mOrientation = orientation;
+        if(mGridLayoutManager != null){
+            mGridLayoutManager.setOrientation(mOrientation);
+        }
+    }
+
+    @Override
+    public void setSpanCount(int spanCount) {
+        if(spanCount < 1){
+            return;
+        }
+        mSpanCount = spanCount;
+        if(mGridLayoutManager != null){
+            mGridLayoutManager.setSpanCount(spanCount);
+        }
     }
 
     public static class SimpleStringRecyclerViewAdapter
