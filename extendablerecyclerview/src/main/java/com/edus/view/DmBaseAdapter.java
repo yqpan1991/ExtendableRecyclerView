@@ -108,8 +108,20 @@ public abstract class DmBaseAdapter<T> extends RecyclerView.Adapter<DmBaseViewHo
         return mHeadViews.size();
     }
 
+    private boolean isFooterViewType(int viewType) {
+        return viewType == VIEW_TYPE_FOOTER;
+    }
+
     private boolean isHeaderViewType(int viewType){
         return viewType >= mMinHeaderType && viewType <= mMaxHeaderType;
+    }
+
+    public boolean isHeader(int position){
+        return isHeaderViewType(getItemViewType(position));
+    }
+
+    public boolean isFooter(int position){
+        return isFooterViewType(getItemViewType(position));
     }
 
 
@@ -198,7 +210,7 @@ public abstract class DmBaseAdapter<T> extends RecyclerView.Adapter<DmBaseViewHo
 
     @Override
     public final DmBaseViewHolder<T> onCreateViewHolder(ViewGroup parent, int viewType) {
-        if(viewType == VIEW_TYPE_FOOTER){
+        if(isFooterViewType(viewType)){
             return onCreateLoadingViewHolder(parent, viewType);
         }else if(isHeaderViewType(viewType)){
             return onCreateHeaderViewHolder(parent,viewType);
@@ -220,7 +232,7 @@ public abstract class DmBaseAdapter<T> extends RecyclerView.Adapter<DmBaseViewHo
     @Override
     public final void onBindViewHolder(DmBaseViewHolder holder, int position) {
         int viewType = getItemViewType(position);
-        if(viewType == VIEW_TYPE_FOOTER){
+        if(isFooterViewType(viewType)){
             onBindLoadingViewHolder(holder, position);
         }else if(isHeaderViewType(viewType)){
             onBindHeaderViewHolder(holder, position);

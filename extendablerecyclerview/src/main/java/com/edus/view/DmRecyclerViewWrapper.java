@@ -116,6 +116,26 @@ public class DmRecyclerViewWrapper extends FrameLayout {
 
     public void setLayoutManager(RecyclerView.LayoutManager layoutManager) {
         mRvRecycler.setLayoutManager(layoutManager);
+        handleLayoutManagerSetted(layoutManager);
+    }
+
+    private void handleLayoutManagerSetted(RecyclerView.LayoutManager layoutManager) {
+        if(layoutManager == null){
+            return;
+        }
+        if(layoutManager instanceof GridLayoutManager){//将header和footer作为整行或者整列使用
+            final GridLayoutManager gridLayoutManager = (GridLayoutManager) layoutManager;
+            gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                @Override
+                public int getSpanSize(int position) {
+                    DmBaseAdapter adapter = getAdapter();
+                    if(adapter != null && ( adapter.isHeader(position) || adapter.isFooter(position))){
+                        return gridLayoutManager.getSpanCount();
+                    }
+                    return 1;
+                }
+            });
+        }
     }
 
     public void setHasFixedSize(boolean hasFixedSize) {

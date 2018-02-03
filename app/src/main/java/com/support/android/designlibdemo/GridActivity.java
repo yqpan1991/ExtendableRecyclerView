@@ -111,6 +111,7 @@ public class GridActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         mAdapter = new Adapter(getSupportFragmentManager());
         mAdapter.addFragment(new CheeseGridFragment(), "normal");
+        mAdapter.addFragment(new GridWithHeaderFragment(), "header");
         viewPager.setAdapter(mAdapter);
     }
 
